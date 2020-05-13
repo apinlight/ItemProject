@@ -25,6 +25,7 @@ public class Item_MainMenu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -67,6 +68,14 @@ public class Item_MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 420, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
+        jLabel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jLabel1PropertyChange(evt);
+            }
+        });
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 270));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -89,6 +98,10 @@ public class Item_MainMenu extends javax.swing.JFrame {
             this.setVisible(false);
             new Item_LoginPage().setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1PropertyChange
 
     /**
      * @param args the command line arguments
@@ -131,5 +144,6 @@ public class Item_MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
