@@ -130,7 +130,7 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
 
     private void Item_DaftarOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_DaftarOKActionPerformed
         // TODO add your handling code here:
-        if (Item_Daftar.getOption="Oven"){
+        if Item_Daftar.get{
             Item_TeksBarang.setText("Sampai kapan?");
         }
     }//GEN-LAST:event_Item_DaftarOKActionPerformed

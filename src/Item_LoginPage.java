@@ -107,6 +107,11 @@ public class Item_LoginPage extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
+        login.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                loginKeyPressed(evt);
+            }
+        });
         getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 209, 107, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
@@ -147,6 +152,10 @@ public class Item_LoginPage extends javax.swing.JFrame {
     private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1PropertyChange
+
+    private void loginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_loginKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loginKeyPressed
 
     /**
      * @param args the command line arguments
