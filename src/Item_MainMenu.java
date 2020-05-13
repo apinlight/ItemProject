@@ -25,9 +25,9 @@ public class Item_MainMenu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         MainMenu.setFont(new java.awt.Font("Mistral", 0, 36)); // NOI18N
@@ -67,9 +67,6 @@ public class Item_MainMenu extends javax.swing.JFrame {
         });
         getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 420, -1));
 
-        jButton8.setText("Daftar Pesanan Elektonik Pengguna");
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 420, -1));
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -91,9 +88,6 @@ public class Item_MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
             this.setVisible(false);
             new Item_LoginPage().setVisible(true);
-            Item_LoginPage.Username.setText("");
-            Item_LoginPage.Password.setText("");
-            Item_LoginPage.Username.requestFocus();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -137,6 +131,5 @@ public class Item_MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     // End of variables declaration//GEN-END:variables
 }

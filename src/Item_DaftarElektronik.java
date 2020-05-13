@@ -31,10 +31,11 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         Item_Daftar = new javax.swing.JComboBox<>();
         Item_DaftarOK = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Item_TeksBarang = new javax.swing.JTextField();
         BackElektronik = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Tempus Sans ITC", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -42,6 +43,7 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         Item_Daftar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Oven", "Kipas Angin", "Kulkas", "Dispenser" }));
+        Item_Daftar.setToolTipText("");
         Item_Daftar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Item_DaftarActionPerformed(evt);
@@ -49,6 +51,17 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         });
 
         Item_DaftarOK.setText("OK");
+        Item_DaftarOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_DaftarOKActionPerformed(evt);
+            }
+        });
+
+        Item_TeksBarang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Item_TeksBarangActionPerformed(evt);
+            }
+        });
 
         BackElektronik.setText("Kembali");
         BackElektronik.addActionListener(new java.awt.event.ActionListener() {
@@ -70,14 +83,15 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Item_Daftar, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Item_DaftarOK)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BackElektronik)))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BackElektronik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Item_TeksBarang, javax.swing.GroupLayout.PREFERRED_SIZE, 415, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -94,11 +108,11 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jLabel2)
-                        .addContainerGap(292, Short.MAX_VALUE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1)
-                        .addContainerGap())))
+                        .addComponent(Item_TeksBarang, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                        .addGap(50, 50, 50))))
         );
 
         pack();
@@ -113,6 +127,17 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
             this.setVisible(false);
             new Item_MainMenu().setVisible(true);
     }//GEN-LAST:event_BackElektronikActionPerformed
+
+    private void Item_DaftarOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_DaftarOKActionPerformed
+        // TODO add your handling code here:
+        if (Item_Daftar.getOption="Oven"){
+            Item_TeksBarang.setText("Sampai kapan?");
+        }
+    }//GEN-LAST:event_Item_DaftarOKActionPerformed
+
+    private void Item_TeksBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_TeksBarangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Item_TeksBarangActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,9 +178,9 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
     private javax.swing.JButton BackElektronik;
     private javax.swing.JComboBox<String> Item_Daftar;
     private javax.swing.JButton Item_DaftarOK;
+    private javax.swing.JTextField Item_TeksBarang;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
