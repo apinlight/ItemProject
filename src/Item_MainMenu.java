@@ -21,11 +21,11 @@ public class Item_MainMenu extends javax.swing.JFrame {
     private void initComponents() {
 
         MainMenu = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        HelpButton = new javax.swing.JButton();
+        LogOutButton = new javax.swing.JButton();
+        ExitButton = new javax.swing.JButton();
+        Item_BarangButton = new javax.swing.JButton();
+        lbBackgroud = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -36,72 +36,76 @@ public class Item_MainMenu extends javax.swing.JFrame {
         MainMenu.setText("~ Main Menu ~");
         getContentPane().add(MainMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 422, 45));
 
-        jButton4.setText("Help");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        HelpButton.setText("Help");
+        HelpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                HelpButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 420, -1));
+        getContentPane().add(HelpButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 420, -1));
 
-        jButton5.setText("Log Out");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        LogOutButton.setText("Log Out");
+        LogOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                LogOutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 420, -1));
+        getContentPane().add(LogOutButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, 420, -1));
 
-        jButton6.setText("Exit");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ExitButton.setText("Exit");
+        ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ExitButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 420, -1));
+        getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 420, -1));
 
-        jButton7.setText("Lihat Barang Elektronik");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        Item_BarangButton.setText("Lihat Barang Elektronik");
+        Item_BarangButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                Item_BarangButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 420, -1));
+        getContentPane().add(Item_BarangButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 420, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
-        jLabel1.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        lbBackgroud.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
+        lbBackgroud.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jLabel1PropertyChange(evt);
+                lbBackgroudPropertyChange(evt);
             }
         });
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 270));
+        getContentPane().add(lbBackgroud, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+        dispose();
+        System.exit(0);
+    }//GEN-LAST:event_ExitButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void HelpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+            this.setVisible(false);
+            new Item_Help().setVisible(true);
+    }//GEN-LAST:event_HelpButtonActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+    private void Item_BarangButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_BarangButtonActionPerformed
         // TODO add your handling code here:
             this.setVisible(false);
             new Item_DaftarElektronik().setVisible(true);
-    }//GEN-LAST:event_jButton7ActionPerformed
+    }//GEN-LAST:event_Item_BarangButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void LogOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogOutButtonActionPerformed
         // TODO add your handling code here:
             this.setVisible(false);
             new Item_LoginPage().setVisible(true);
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_LogOutButtonActionPerformed
 
-    private void jLabel1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jLabel1PropertyChange
+    private void lbBackgroudPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lbBackgroudPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel1PropertyChange
+    }//GEN-LAST:event_lbBackgroudPropertyChange
 
     /**
      * @param args the command line arguments
@@ -139,11 +143,11 @@ public class Item_MainMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ExitButton;
+    private javax.swing.JButton HelpButton;
+    private javax.swing.JButton Item_BarangButton;
+    private javax.swing.JButton LogOutButton;
     private javax.swing.JLabel MainMenu;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbBackgroud;
     // End of variables declaration//GEN-END:variables
 }

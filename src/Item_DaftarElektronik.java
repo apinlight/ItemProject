@@ -29,20 +29,22 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         Item_Daftar = new javax.swing.JComboBox<>();
-        Item_DaftarOK = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        Item_TeksBarang = new javax.swing.JTextField();
         BackElektronik = new javax.swing.JButton();
         lbNamaBarang = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         Barang_Nama = new javax.swing.JLabel();
         Barang_Jenis = new javax.swing.JLabel();
         Barang_Jumlah = new javax.swing.JLabel();
-        lbJenisBarang = new javax.swing.JLabel();
+        Barang_Harga = new javax.swing.JLabel();
+        lbBackground = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(447, 302));
+        setMaximumSize(new java.awt.Dimension(447, 200));
+        setMinimumSize(new java.awt.Dimension(447, 200));
+        setPreferredSize(new java.awt.Dimension(447, 200));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -59,23 +61,8 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
                 Item_DaftarActionPerformed(evt);
             }
         });
-        getContentPane().add(Item_Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 279, -1));
-
-        Item_DaftarOK.setText("OK");
-        Item_DaftarOK.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Item_DaftarOKActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Item_DaftarOK, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, -1, -1));
+        getContentPane().add(Item_Daftar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 330, -1));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, -1, -1));
-
-        Item_TeksBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Item_TeksBarangActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Item_TeksBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 420, 370));
 
         BackElektronik.setText("Kembali");
         BackElektronik.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +70,7 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
                 BackElektronikActionPerformed(evt);
             }
         });
-        getContentPane().add(BackElektronik, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, -1, -1));
+        getContentPane().add(BackElektronik, new org.netbeans.lib.awtextra.AbsoluteConstraints(349, 30, 80, -1));
 
         lbNamaBarang.setText("Nama Barang ");
         getContentPane().add(lbNamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 100, -1));
@@ -94,6 +81,9 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         jLabel3.setText("Jumlah Tersedia");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 100, -1));
 
+        jLabel5.setText("Harga Satuan");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
         Barang_Nama.setText("-");
         getContentPane().add(Barang_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 310, -1));
 
@@ -103,13 +93,21 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
         Barang_Jumlah.setText("-");
         getContentPane().add(Barang_Jumlah, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 310, -1));
 
-        lbJenisBarang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
-        lbJenisBarang.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                lbJenisBarangPropertyChange(evt);
+        Barang_Harga.setText("-");
+        getContentPane().add(Barang_Harga, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 310, -1));
+
+        lbBackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/istockphoto-648446306-1024x1024.jpg"))); // NOI18N
+        lbBackground.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                lbBackgroundComponentHidden(evt);
             }
         });
-        getContentPane().add(lbJenisBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 510));
+        lbBackground.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                lbBackgroundPropertyChange(evt);
+            }
+        });
+        getContentPane().add(lbBackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,26 +118,31 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
             Barang_Nama.setText("-");
             Barang_Jenis.setText("-");
             Barang_Jumlah.setText("-");
+            Barang_Harga.setText("-");
         }
         else if (Item_Daftar.getSelectedItem()=="Oven"){
             Barang_Nama.setText("Oven Elsadiriti");
             Barang_Jenis.setText("Elektronik Dapur");
             Barang_Jumlah.setText("5");
+            Barang_Harga.setText("Rp745.000,00");
         }
         else if (Item_Daftar.getSelectedItem()=="Kipas Angin"){
             Barang_Nama.setText("Kipas Angin Sinshu");
             Barang_Jenis.setText("Elektronik Keluarga");
             Barang_Jumlah.setText("1");
+            Barang_Harga.setText("Rp145.000,00");
         }
         else if (Item_Daftar.getSelectedItem()=="Kulkas"){
             Barang_Nama.setText("Kulkas Freezering");
             Barang_Jenis.setText("Elektronik Dapur");
-            Barang_Jumlah.setText("2");            
+            Barang_Jumlah.setText("2"); 
+            Barang_Harga.setText("Rp1.235.000,00");
         }
         else if (Item_Daftar.getSelectedItem()=="Dispenser"){
             Barang_Nama.setText("Dispenser Tirta");
             Barang_Jenis.setText("Elektronik Dapur");
             Barang_Jumlah.setText("3");
+            Barang_Harga.setText("Rp240.000,00");
         }
         
     }//GEN-LAST:event_Item_DaftarActionPerformed
@@ -150,17 +153,13 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
             new Item_MainMenu().setVisible(true);
     }//GEN-LAST:event_BackElektronikActionPerformed
 
-    private void Item_DaftarOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_DaftarOKActionPerformed
+    private void lbBackgroundPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lbBackgroundPropertyChange
         // TODO add your handling code here:
-    }//GEN-LAST:event_Item_DaftarOKActionPerformed
+    }//GEN-LAST:event_lbBackgroundPropertyChange
 
-    private void Item_TeksBarangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Item_TeksBarangActionPerformed
+    private void lbBackgroundComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_lbBackgroundComponentHidden
         // TODO add your handling code here:
-    }//GEN-LAST:event_Item_TeksBarangActionPerformed
-
-    private void lbJenisBarangPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_lbJenisBarangPropertyChange
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lbJenisBarangPropertyChange
+    }//GEN-LAST:event_lbBackgroundComponentHidden
 
     /**
      * @param args the command line arguments
@@ -199,18 +198,18 @@ public class Item_DaftarElektronik extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackElektronik;
+    private javax.swing.JLabel Barang_Harga;
     private javax.swing.JLabel Barang_Jenis;
     private javax.swing.JLabel Barang_Jumlah;
     private javax.swing.JLabel Barang_Nama;
     private javax.swing.JComboBox<String> Item_Daftar;
-    private javax.swing.JButton Item_DaftarOK;
-    private javax.swing.JTextField Item_TeksBarang;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lbJenisBarang;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel lbBackground;
     private javax.swing.JLabel lbNamaBarang;
     // End of variables declaration//GEN-END:variables
 }
